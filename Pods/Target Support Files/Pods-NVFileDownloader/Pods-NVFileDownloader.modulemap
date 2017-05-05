@@ -1,0 +1,6 @@
+framework module Pods_NVFileDownloader {
+  umbrella header "Pods-NVFileDownloader-umbrella.h"
+
+  export *
+  module * { export * }
+}

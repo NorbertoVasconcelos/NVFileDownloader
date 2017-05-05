@@ -7,13 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		13EAFDFAA4BA70B9EACB11EA /* Pods_NVFileDownloader.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEC75DAC4C073FB6C31AA0ED /* Pods_NVFileDownloader.framework */; };
 		5A6251241EBC86E500A441BF /* NVFileDownloader.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A6251221EBC86E500A441BF /* NVFileDownloader.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5A62512E1EBC88EE00A441BF /* Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A62512D1EBC88EE00A441BF /* Progress.swift */; };
+		5A6251301EBC88F600A441BF /* FileProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A62512F1EBC88F600A441BF /* FileProgress.swift */; };
+		5A6251321EBC88FF00A441BF /* FileDownloaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6251311EBC88FF00A441BF /* FileDownloaderProtocol.swift */; };
+		5A6251341EBC890D00A441BF /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6251331EBC890D00A441BF /* Stack.swift */; };
+		5A6251361EBC891B00A441BF /* FileDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A6251351EBC891B00A441BF /* FileDownloader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1ECAC4DD5AC4E5D85C9A7ECD /* Pods-NVFileDownloader.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NVFileDownloader.release.xcconfig"; path = "Pods/Target Support Files/Pods-NVFileDownloader/Pods-NVFileDownloader.release.xcconfig"; sourceTree = "<group>"; };
+		458A1219E69E551DE698A611 /* Pods-NVFileDownloader.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NVFileDownloader.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NVFileDownloader/Pods-NVFileDownloader.debug.xcconfig"; sourceTree = "<group>"; };
 		5A62511F1EBC86E500A441BF /* NVFileDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NVFileDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A6251221EBC86E500A441BF /* NVFileDownloader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NVFileDownloader.h; sourceTree = "<group>"; };
 		5A6251231EBC86E500A441BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A62512D1EBC88EE00A441BF /* Progress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progress.swift; sourceTree = "<group>"; };
+		5A62512F1EBC88F600A441BF /* FileProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileProgress.swift; sourceTree = "<group>"; };
+		5A6251311EBC88FF00A441BF /* FileDownloaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownloaderProtocol.swift; sourceTree = "<group>"; };
+		5A6251331EBC890D00A441BF /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		5A6251351EBC891B00A441BF /* FileDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownloader.swift; sourceTree = "<group>"; };
+		AEC75DAC4C073FB6C31AA0ED /* Pods_NVFileDownloader.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NVFileDownloader.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13EAFDFAA4BA70B9EACB11EA /* Pods_NVFileDownloader.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -32,6 +47,8 @@
 			children = (
 				5A6251211EBC86E500A441BF /* NVFileDownloader */,
 				5A6251201EBC86E500A441BF /* Products */,
+				6464E1476DFB2BBAC56CBC58 /* Pods */,
+				92EE8ED8A7AA1AF366F455F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -46,10 +63,56 @@
 		5A6251211EBC86E500A441BF /* NVFileDownloader */ = {
 			isa = PBXGroup;
 			children = (
+				5A62512C1EBC88A400A441BF /* Models */,
+				5A62512B1EBC889700A441BF /* Protocols */,
+				5A62512A1EBC889000A441BF /* Utils */,
+				5A6251351EBC891B00A441BF /* FileDownloader.swift */,
 				5A6251221EBC86E500A441BF /* NVFileDownloader.h */,
 				5A6251231EBC86E500A441BF /* Info.plist */,
 			);
 			path = NVFileDownloader;
+			sourceTree = "<group>";
+		};
+		5A62512A1EBC889000A441BF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5A6251331EBC890D00A441BF /* Stack.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		5A62512B1EBC889700A441BF /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5A6251311EBC88FF00A441BF /* FileDownloaderProtocol.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		5A62512C1EBC88A400A441BF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5A62512D1EBC88EE00A441BF /* Progress.swift */,
+				5A62512F1EBC88F600A441BF /* FileProgress.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6464E1476DFB2BBAC56CBC58 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				458A1219E69E551DE698A611 /* Pods-NVFileDownloader.debug.xcconfig */,
+				1ECAC4DD5AC4E5D85C9A7ECD /* Pods-NVFileDownloader.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		92EE8ED8A7AA1AF366F455F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AEC75DAC4C073FB6C31AA0ED /* Pods_NVFileDownloader.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,10 +133,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A6251271EBC86E500A441BF /* Build configuration list for PBXNativeTarget "NVFileDownloader" */;
 			buildPhases = (
+				9B6CB72B563F6AC147B73B1C /* [CP] Check Pods Manifest.lock */,
 				5A62511A1EBC86E500A441BF /* Sources */,
 				5A62511B1EBC86E500A441BF /* Frameworks */,
 				5A62511C1EBC86E500A441BF /* Headers */,
 				5A62511D1EBC86E500A441BF /* Resources */,
+				3616EC892E99E1033D8C93D1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +161,7 @@
 					5A62511E1EBC86E500A441BF = {
 						CreatedOnToolsVersion = 8.3.1;
 						DevelopmentTeam = YK6D76K5Q5;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -127,11 +193,49 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3616EC892E99E1033D8C93D1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NVFileDownloader/Pods-NVFileDownloader-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B6CB72B563F6AC147B73B1C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5A62511A1EBC86E500A441BF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A6251341EBC890D00A441BF /* Stack.swift in Sources */,
+				5A6251321EBC88FF00A441BF /* FileDownloaderProtocol.swift in Sources */,
+				5A6251301EBC88F600A441BF /* FileProgress.swift in Sources */,
+				5A62512E1EBC88EE00A441BF /* Progress.swift in Sources */,
+				5A6251361EBC891B00A441BF /* FileDownloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +345,9 @@
 		};
 		5A6251281EBC86E500A441BF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 458A1219E69E551DE698A611 /* Pods-NVFileDownloader.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YK6D76K5Q5;
@@ -254,13 +360,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = pt.forkit.NVFileDownloader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		5A6251291EBC86E500A441BF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1ECAC4DD5AC4E5D85C9A7ECD /* Pods-NVFileDownloader.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = YK6D76K5Q5;
@@ -296,6 +405,7 @@
 				5A6251291EBC86E500A441BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
