@@ -32,5 +32,5 @@ s.dependency 'RxCocoa',    '~> 3.0'
 s.source_files = "NVFileDownloader/**/*.{swift}"
 
 # 9
-s.resources = "NVFileDownloader/**/*.{png,jpeg,jpg,storyboard,xib}"
+#s.resources = "NVFileDownloader/**/*.{png,jpeg,jpg,storyboard,xib}"
 end
