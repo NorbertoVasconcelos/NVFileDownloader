@@ -16,7 +16,7 @@ protocol FileDownloaderDelegate {
     func downloadComplete(files: [Data])
 }
 
-class FileDownloader: FileDownloaderProtocol {
+public class FileDownloader: FileDownloaderProtocol {
     
     static var delegate: FileDownloaderDelegate?
     private static var overallProgress: Progress = Progress()
