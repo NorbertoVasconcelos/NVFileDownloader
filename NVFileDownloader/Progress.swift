@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Progress {
+public class Progress {
     var files: Dictionary<String, FileProgress>
     private var totalDownloadSize: Float = 0.0
     

@@ -11,14 +11,14 @@ import Alamofire
 import RxSwift
 import RxCocoa
 
-protocol FileDownloaderDelegate {
+public protocol FileDownloaderDelegate {
     func progressUpdate(progress: Progress)
     func downloadComplete(files: [Data])
 }
 
 public class FileDownloader: FileDownloaderProtocol {
     
-    static var delegate: FileDownloaderDelegate?
+    public static var delegate: FileDownloaderDelegate?
     private static var overallProgress: Progress = Progress()
     private static var downloadStack: Stack = Stack<FileProgress>()
     private static var executionLocked: Variable<Bool> = Variable(false)
@@ -28,7 +28,7 @@ public class FileDownloader: FileDownloaderProtocol {
     private static var bytesAtStart: Double?
     private static var timeAtStart: Date?
     
-    static func syncDownload(urls: [URL]) {
+    public static func syncDownload(urls: [URL]) {
         
         for url in urls {
             let fileProgress = FileProgress(url)
@@ -60,7 +60,7 @@ public class FileDownloader: FileDownloaderProtocol {
             .disposed(by: disposeBag)
     }
     
-    static func asyncDownload(urls: [URL]) {
+    public static func asyncDownload(urls: [URL]) {
 //        let newProgress = Progress(urls: urls)
 //        downloadQueue.append(newProgress)
 //
@@ -75,7 +75,7 @@ public class FileDownloader: FileDownloaderProtocol {
     }
     
     // Cancel all downloads.
-    func cancel() {
+    public func cancel() {
         
     }
     
