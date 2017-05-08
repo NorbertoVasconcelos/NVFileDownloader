@@ -8,7 +8,7 @@ s.summary = "NVFileDownloader allows synchronous and asynchronous file downloads
 s.requires_arc = true
 
 # 2
-s.version = "0.1.0"
+s.version = "0.1.1"
 
 # 3
 s.license = { :type => "MIT", :file => "LICENSE" }
@@ -25,8 +25,8 @@ s.source = { :git => "https://github.com/NorbertoVasconcelos/NVFileDownloader.gi
 # 7
 s.framework = "UIKit"
 s.dependency 'Alamofire'
-s.dependency 'RxSwift',    '~> 3.0'
-s.dependency 'RxCocoa',    '~> 3.0'
+s.dependency 'RxSwift'
+s.dependency 'RxCocoa'
 
 # 8
 s.source_files = "NVFileDownloader/**/*.{swift}"

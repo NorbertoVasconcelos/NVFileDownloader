@@ -37,7 +37,7 @@ public class FileDownloader: FileDownloaderProtocol {
         
         executionLocked
             .asObservable()
-            .bindNext({
+            .bind(onNext: {
                 locked in
                 print(locked)
             
