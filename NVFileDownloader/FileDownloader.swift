@@ -13,7 +13,7 @@ import RxCocoa
 
 public protocol FileDownloaderDelegate {
     func progressUpdate(progress: Progress)
-    func downloadComplete(files: [Data])
+    func downloadComplete(file: Data, fileUrl: String)
 }
 
 public class FileDownloader: FileDownloaderProtocol {
@@ -53,6 +53,7 @@ public class FileDownloader: FileDownloaderProtocol {
                                                     print("Downloaded a file.")
                                                     overallProgress.removeFile(fp)
                                                     executionLocked.value = false
+                                                    self.delegate?.downloadComplete(file: data, fileUrl: fp.url.absoluteString)
                         })
                     }
                 }

@@ -9,18 +9,18 @@
 import Foundation
 
 public class Progress {
-    var files: Dictionary<String, FileProgress>
+    public var files: Dictionary<String, FileProgress>
     private var totalDownloadSize: Float = 0.0
     
-    init() {
+    public init() {
         files = Dictionary<String, FileProgress>()
     }
     
-    func numberOfFiles() -> Int {
+    public func numberOfFiles() -> Int {
         return files.count
     }
     
-    func downloadSpeed() -> Float {
+    public func downloadSpeed() -> Float {
         var combinedDownloadSpeed: Float = 0.0
         for key in files.keys {
             let fp = files[key]
@@ -29,7 +29,7 @@ public class Progress {
         return combinedDownloadSpeed
     }
     
-    func downloadedBytes() -> Float {
+    public func downloadedBytes() -> Float {
         var combinedDownloaded: Float = 0.0
         for key in files.keys {
             let fp = files[key]
@@ -39,17 +39,17 @@ public class Progress {
     }
     
     // File functions
-    func addFile(_ file: FileProgress) {
+    public func addFile(_ file: FileProgress) {
         let urlString = String(describing: file.url)
         files[urlString] = file
     }
     
-    func removeFile(_ file: FileProgress) {
+    public func removeFile(_ file: FileProgress) {
         let urlString = String(describing: file.url)
         files.removeValue(forKey: urlString)
     }
     
-    func updateFile(_ file: FileProgress) {
+    public func updateFile(_ file: FileProgress) {
         let urlString = String(describing: file.url)
         let currentFile = files[urlString]
         if let cf = currentFile, cf.fileSize == 0 {
@@ -59,7 +59,7 @@ public class Progress {
     }
     
     // Progress details
-    func details() -> String {
+    public func details() -> String {
         return "Total Download Size: \(totalDownloadSize) \n Downloaded Bytes: \(downloadedBytes()) \n Download Speed: \(downloadSpeed())"
     }
 }

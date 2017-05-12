@@ -8,14 +8,14 @@
 
 import Foundation
 
-class FileProgress {
-    var url: URL
-    var downloadedBytes: Float
-    var downloadSpeed: Float
-    var fileSize: Float
-    var percentage: Float
+public class FileProgress {
+    public var url: URL
+    public var downloadedBytes: Float
+    public var downloadSpeed: Float
+    public var fileSize: Float
+    public var percentage: Float
     
-    init(_ url: URL) {
+    public init(_ url: URL) {
         self.url = url
         self.fileSize = 0.0
         self.downloadedBytes = 0.0
@@ -23,7 +23,7 @@ class FileProgress {
         self.percentage = 0.0
     }
     
-    init(url: URL, downloadedBytes: Float, downloadSpeed: Float, fileSize: Float, percentage: Float) {
+    public init(url: URL, downloadedBytes: Float, downloadSpeed: Float, fileSize: Float, percentage: Float) {
         self.url = url
         self.fileSize = fileSize
         self.downloadedBytes = downloadedBytes
