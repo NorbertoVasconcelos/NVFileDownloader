@@ -10,6 +10,7 @@ import Foundation
 
 public class Progress {
     public var files: Dictionary<String, FileProgress>
+    public var currentFileUrl: String?
     private var totalDownloadSize: Float = 0.0
     
     public init() {
@@ -41,6 +42,7 @@ public class Progress {
     // File functions
     public func addFile(_ file: FileProgress) {
         let urlString = String(describing: file.url)
+        currentFileUrl = urlString
         files[urlString] = file
     }
     
