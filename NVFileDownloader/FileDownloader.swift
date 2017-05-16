@@ -14,6 +14,7 @@ import RxCocoa
 public protocol FileDownloaderDelegate {
     func progressUpdate(progress: Progress)
     func downloadComplete(file: Data, fileUrl: String)
+    func allDownloadsComplete()
 }
 
 public class FileDownloader: FileDownloaderProtocol {
@@ -54,6 +55,9 @@ public class FileDownloader: FileDownloaderProtocol {
                                                     overallProgress.removeFile(fp)
                                                     executionLocked.value = false
                                                     self.delegate?.downloadComplete(file: data, fileUrl: fp.url.absoluteString)
+                                                    if downloadStack.count == 0 {
+                                                        self.delegate?.allDownloadsComplete()
+                                                    }
                         })
                     }
                 }
@@ -86,7 +90,7 @@ public class FileDownloader: FileDownloaderProtocol {
         timeAtStart = Date()
         bytesAtStart = 0.0
         
-        Alamofire.request(fileProgress.url,
+        Alamofire.request("http://\(fileProgress.url)",
                           method: .get,
                           parameters: nil,
                           encoding: JSONEncoding.default,
