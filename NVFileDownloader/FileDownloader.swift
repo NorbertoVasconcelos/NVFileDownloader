@@ -90,11 +90,7 @@ public class FileDownloader: FileDownloaderProtocol {
         timeAtStart = Date()
         bytesAtStart = 0.0
         
-        Alamofire.request("http://\(fileProgress.url)",
-                          method: .get,
-                          parameters: nil,
-                          encoding: JSONEncoding.default,
-                          headers: nil)
+        Alamofire.request("http://\(fileProgress.url)")
             .downloadProgress(closure: { progress in
                 
                 let updatedFileProgress = FileProgress(fileProgress.url)
