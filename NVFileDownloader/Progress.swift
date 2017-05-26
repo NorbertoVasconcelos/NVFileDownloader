@@ -11,7 +11,7 @@ import Foundation
 public class Progress {
     public var files: Dictionary<String, FileProgress>
     public var currentFileUrl: String?
-    private var totalDownloadSize: Float = 0.0
+    public var totalDownloadSize: Float = 0.0
     
     public init() {
         files = Dictionary<String, FileProgress>()
